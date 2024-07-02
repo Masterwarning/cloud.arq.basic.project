@@ -1,0 +1,23 @@
+html
+{
+    font-family: sans-serif, Arial, Helvetica;
+    background-color: #2b2a33;
+    color: #d8d5d0;
+    text-align: center;
+}
+
+h1
+{       
+    font-size: 40px;
+}
+
+button
+{
+    font-size: 100%;
+    background-color: #4b4959;
+    color: #d8d5d0;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
