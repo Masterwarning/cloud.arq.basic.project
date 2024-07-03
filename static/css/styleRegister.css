@@ -1,5 +1,10 @@
 form
 {
- background-color: #42414d;
+    background-color: #42414d;
 }
 
+input[type="text"], input[type="date"], select
+{
+    background-color: #2b2a33;
+    color: #d8d5d0;
+}

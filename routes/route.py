@@ -9,10 +9,14 @@ def index_page():
 def register_page():
     return ctrl_register_page()
 
+@app.route("/register_user", methods=['post'])
+def register_user():
+    return ctrl_register_user()
+
 @app.route("/consultar")
 def consult_page():
     return ctrl_consult_page()
 
-@app.route("/register_user", methods=['post'])
-def register_user():
-    return ctrl_register_user()
+@app.route("/consult_user", methods=['post'])
+def consult_user():
+    return ctrl_consult_user()
