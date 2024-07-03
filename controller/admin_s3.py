@@ -4,7 +4,7 @@ from credentials.keys import ACCESS_KEY, SECRET_KEY
 import tempfile
 
 bucket_name = "bucket-project-cloudvet"
-url_photos = "https://bucket-project-cloudvet.s3.amazonaws.com/photos/"
+url_photos = "https://bucket-project-cloudvet.s3.amazonaws.com/photos-users/"
 
 def connect_s3():
     try:
@@ -36,7 +36,7 @@ def upload_s3(local_path, photo, id):
         s3_resource = connect_s3()
         file_name = photo.filename
         extension = file_name.split(".")[-1]
-        bucket_path = "photos/" + id + "." + extension
+        bucket_path = "photos-users/" + id + "." + extension
         s3_resource.meta.client.upload_file(local_path, bucket_name, bucket_path)
         print("admin_s3.upload_s3: Foto almacenada en bucket S3")
         return True
@@ -48,7 +48,7 @@ def consult_file(id):
     try:
         s3_resource = connect_s3()
         bucket_repo = s3_resource.Bucket(bucket_name)
-        bucket_objects = bucket_repo.objects.filter(Prefix="photos/")
+        bucket_objects = bucket_repo.objects.filter(Prefix="photos-users/")
 
         for obj in bucket_objects:
             if id in obj.key:

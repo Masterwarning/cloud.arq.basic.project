@@ -19,8 +19,8 @@ def connectionSQL():
         print("db.connectionSQL: error -", error)
         return None
     
-def add_user(id, name, lastname, email, birthday, gender, address):
-    query = "INSERT INTO users(id, name, lastname, email, birthday, gender, address) VALUES ({}, \'{}\', \'{}\', \'{}\', \'{}\', \'{}\', \'{}\');".format(id, name, lastname, email, birthday, gender, address)
+def add_user(id, name, lastname, email, telephone, birthday, gender, address):
+    query = "INSERT INTO User(id, name, lastname, email, telephone, birthday, gender, address) VALUES ({}, \'{}\', \'{}\', \'{}\', {}, \'{}\', \'{}\', \'{}\');".format(id, name, lastname, email, telephone, birthday, gender, address)
     #print(query)
     connection_sql = connectionSQL()
 
@@ -38,7 +38,7 @@ def add_user(id, name, lastname, email, birthday, gender, address):
     
 
 def consult_user(id):
-    query = "SELECT * FROM users WHERE id = {};".format(id)
+    query = "SELECT * FROM User WHERE id = {};".format(id)
     #print(query)
     connection_sql = connectionSQL()
 

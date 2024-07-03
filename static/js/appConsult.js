@@ -27,16 +27,16 @@ function consult_user()
                 document.getElementById("photo").src = data.photo;
             }
             
-            console.log(data.object[0])
             document.getElementById("txt-id").innerHTML = "Consultar: " + data.object[0];
             document.getElementById("id").innerHTML = data.object[0];
             document.getElementById("name").innerHTML = data.object[1];
             document.getElementById("lastname").innerHTML = data.object[2];
             document.getElementById("email").innerHTML = data.object[3];
-            let casting_date = (data.object[4]).replace(" 00:00:00 GMT", "") //change format
+            document.getElementById("telephone").innerHTML = data.object[4];
+            let casting_date = (data.object[5]).replace(" 00:00:00 GMT", "") //change format
             document.getElementById("birthdate").innerHTML = casting_date;
-            document.getElementById("gender").innerHTML = data.object[5];
-            document.getElementById("address").innerHTML = data.object[6];
+            document.getElementById("gender").innerHTML = data.object[6];
+            document.getElementById("address").innerHTML = data.object[7];
             document.getElementById("info").style.display = "block"; 
         }
         else if(data.status === "not found")

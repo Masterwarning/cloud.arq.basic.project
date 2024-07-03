@@ -17,6 +17,7 @@ def ctrl_register_user():
     name = rf['name']
     lastname = rf['lastname']
     email = rf['email']
+    telephone = rf['telephone']
     birthday = rf['birthday']
     gender = rf['gender']
     address = rf['address']
@@ -24,7 +25,7 @@ def ctrl_register_user():
     photo = request.files['photo']
     local_path = save_photo(photo)
     
-    user_registration = add_user(id, name, lastname, email, birthday, gender, address)
+    user_registration = add_user(id, name, lastname, email, telephone, birthday, gender, address)
 
     if user_registration == True:
         upload_status = upload_s3(local_path, photo, id) 
