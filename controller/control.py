@@ -42,15 +42,16 @@ def ctrl_consult_user():
     user_data = consult_user(id)
 
     photo_url = "undefined"
-    user_photo = consult_file(id)
 
-    if user_photo != None:
-        photo_url = user_photo
-    print(photo_url)
     if user_data == False:
         response = {'status' : 'not found'}
         return response
     elif user_data != None:
+
+        user_photo = consult_file(id)
+        if user_photo != None:
+            photo_url = user_photo
+
         response = {
             'status' : 'OK',
             'object' : user_data,
