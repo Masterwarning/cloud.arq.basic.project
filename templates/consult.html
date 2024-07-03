@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://bucket-project-cloudvet.s3.amazonaws.com/public/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/styleGlobal.css">
+    <link rel="stylesheet" href="../static/css/styleConsult.css">
+    <script src="../static/js/appConsult.js"></script>
     <title>Consultar - Cloud Vet</title>
 </head>
 <body>
-    <h1>Consultar</h1>
+    <h1 id="txt-id">Consultar:</h1>
+    <div id="info"><br>        
+        <div id="circular-portrait">
+            <img id="photo" src="https://bucket-project-cloudvet.s3.amazonaws.com/public/defaul-photo.png" alt="profile picture">
+        </div><br>
+        <label>Identificacion: </label><label id="id"></label><br><br>
+        <label>Nombres: </label><label id="name"></label><br><br>
+        <label>Apellidos: </label><label id="lastname"></label><br><br>
+        <label>Email: </label><label id="email"></label><br><br>
+        <label>Fecha de nacimiento: </label><label id="birthdate"></label><br><br>
+        <label>Genero: </label><label id="gender"></label><br><br>
+        <label>Direccion: </label><label id="address"></label><br><br>
+    </div>
+    <div id="search-style"><br>
+        <label>Busqueda: </label><input id="search"><br><br>
+        <button onclick="goBack()">Atras</button>
+        <button onclick="consult_user()">Consultar</button>        
+    </div>   
 </body>
 </html>

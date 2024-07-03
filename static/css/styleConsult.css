@@ -1,0 +1,32 @@
+#info
+{
+    background-color: #42414d;
+}
+
+input
+{
+    background-color: #2b2a33;
+    color: #d8d5d0;
+}
+
+#photo
+{
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    border: 8px solid #b26b00;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+#circular-portrait
+{
+    width: 100%;
+    height: auto;
+}
+
+#info
+{
+    display: none;
+}

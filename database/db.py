@@ -16,7 +16,7 @@ def connectionSQL():
         print("db.connectionSQL: Established")
         return connection_sql
     except Exception as error:
-        print("db.connectionSQL: Error -", error)
+        print("db.connectionSQL: error -", error)
         return None
     
 def add_user(id, name, lastname, email, birthday, gender, address):
@@ -29,9 +29,34 @@ def add_user(id, name, lastname, email, birthday, gender, address):
             cursor = connection_sql.cursor()
             cursor.execute(query)
             connection_sql.commit()
-            print("db.add_user: ID - " + id)
+            print("db.add_user: registrado - " + id)
             return True
-        return False
+        return "Servicios no disponibles, contactar soporte."
     except Exception as error:
-        print("db.add_user: Error -", error)
-        return False
+        print("db.add_user: error -", error)        
+        return "No se puede crear el usuario, verifique los datos"
+    
+
+def consult_user(id):
+    query = "SELECT * FROM users WHERE id = {};".format(id)
+    #print(query)
+    connection_sql = connectionSQL()
+
+    try:
+        if connection_sql != None:
+            cursor = connection_sql.cursor()
+            cursor.execute(query)
+            user_data = cursor.fetchone()
+            if user_data != None:
+                print("db.consult_user: encontrado - " + id)
+                return user_data
+            else:
+                print("db.consult_user: error, usuario con id {} no encontrado".format(id))
+                return False
+        else:
+            print("db.consult_user: error, conexion no exitosa")
+            return None
+
+    except Exception as error:
+        print("db.consult_user: error -", error)
+        return None
