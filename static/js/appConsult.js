@@ -58,6 +58,5 @@ function consult_user()
         alert("Servicio no disponible, contactar al soporte");
     })
 
-
-
+    
 }
